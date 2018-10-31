@@ -176,6 +176,17 @@ public class SettingsCommentsFragment {
                 }
             });
         }
+        {
+            SwitchCompat single = context.findViewById(R.id.settings_comments_collapse_stickied);
+            single.setChecked(SettingValues.collapseStickiedComments);
+            single.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    SettingValues.collapseStickiedComments = isChecked;
+                    SettingValues.prefs.edit().putBoolean(SettingValues.PREF_COLLAPSE_STICKIED, isChecked).apply();
+                }
+            });
+        }
         SwitchCompat check = context.findViewById(R.id.settings_comments_swapGesture);
         check.setChecked(SettingValues.swap);
         check.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

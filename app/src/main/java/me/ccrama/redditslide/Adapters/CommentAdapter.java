@@ -438,6 +438,13 @@ public class CommentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 holder.itemView.findViewById(R.id.next).setVisibility(View.GONE);
             }
 
+            // Collapse stickied comments if set to
+            if (comment.getDataNode().get("stickied").asBoolean() && SettingValues.collapseStickiedComments) {
+                hiddenPersons.add(comment.getFullName());
+                toCollapse.add(comment.getFullName());
+                hideNumber(baseNode, holder.getAdapterPosition() + 1);
+            }
+
             //Should be collapsed?
             if (hiddenPersons.contains(comment.getFullName()) || toCollapse.contains(
                     comment.getFullName())) {
