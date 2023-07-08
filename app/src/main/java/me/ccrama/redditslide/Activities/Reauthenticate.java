@@ -36,8 +36,8 @@ import me.ccrama.redditslide.util.LogUtil;
  * Created by ccrama on 5/27/2015.
  */
 public class Reauthenticate extends BaseActivityAnim {
-    private static final String CLIENT_ID = "KI2Nl9A_ouG9Qw";
-    private static final String REDIRECT_URL = "http://www.ccrama.me";
+    private static final String CLIENT_ID = "EDITME_TOKEN";  // EDITME replace with your app token generated at https://old.reddit.com/prefs/apps
+    private static final String REDIRECT_URL = "http://127.0.0.1/redirect";  // EDITME replace with your redirect uri entered at https://old.reddit.com/prefs/apps
 
     @Override
     public void onCreate(Bundle savedInstance) {
